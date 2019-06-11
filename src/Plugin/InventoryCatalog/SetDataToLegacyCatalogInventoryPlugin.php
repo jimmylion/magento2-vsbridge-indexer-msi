@@ -52,9 +52,11 @@ class SetDataToLegacyCatalogInventoryPlugin
     }
 
     /**
-     * @param $subject
+     * @param SetDataToLegacyCatalogInventory $subject
      * @param callable $proceed
      * @param array $sourceItems
+     * @return void
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function aroundExecute(SetDataToLegacyCatalogInventory $subject, callable $proceed, array $sourceItems)
     {
@@ -80,6 +82,8 @@ class SetDataToLegacyCatalogInventoryPlugin
 
     /**
      * @param SetDataToLegacyCatalogInventory $subject
+     * @return void
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function afterExecute(SetDataToLegacyCatalogInventory $subject)
     {

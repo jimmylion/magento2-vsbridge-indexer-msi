@@ -8,6 +8,7 @@
   }],
   "require": {
     "php": ">=7.0.2",
+    "divante/magento2-vsbridge-indexer": "*",
     "magento/module-inventory-catalog": "*"
   },
   "autoload": {

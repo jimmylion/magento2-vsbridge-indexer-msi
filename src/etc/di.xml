@@ -3,4 +3,13 @@
     <type name="Magento\InventoryCatalog\Model\SourceItemsSaveSynchronization\SetDataToLegacyCatalogInventory">
         <plugin name="updateProductsInEs" type="Divante\VsbridgeIndexerMsi\Plugin\InventoryCatalog\SetDataToLegacyCatalogInventoryPlugin"/>
     </type>
+
+    <preference for="Divante\VsbridgeIndexerMsi\Api\GetStockIdBySalesChannelCodeInterface" type="Divante\VsbridgeIndexerMsi\Model\GetStockIdBySalesChannelCode"/>
+    <preference for="Divante\VsbridgeIndexerCatalog\Api\LoadInventoryInterface" type="Divante\VsbridgeIndexerMsi\Model\LoadInventory"/>
+
+    <type name="Divante\VsbridgeIndexerCatalog\Model\Indexer\DataProvider\Product\ConfigurableData">
+        <arguments>
+            <argument name="loadInventory" xsi:type="object">Divante\VsbridgeIndexerMsi\Model\LoadInventory</argument>
+        </arguments>
+    </type>
 </config>

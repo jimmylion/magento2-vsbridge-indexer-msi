@@ -93,7 +93,7 @@ class Inventory
                     'stock_status' => IndexStructure::IS_SALABLE,
                 ]
             )
-            ->where(IndexStructure::SKU . ' IN (?)', $productIds);
+            ->where(IndexStructure::SKU . ' IN (?)', array_map(function($productId) { return (string)$productId; }, $productIds));
 
         return $connection->fetchAssoc($select);
     }
